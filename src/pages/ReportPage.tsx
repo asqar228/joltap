@@ -32,7 +32,7 @@ export default function ReportPage() {
       const fileExt = image.name.split(".").pop();
       const fileName = `${Date.now()}.${fileExt}`;
       const filePath = `private/${fileName}`;
-      const { data, error } = await supabase.storage
+      const {  error } = await supabase.storage
         .from("issues")
         .upload(filePath, image, {
           contentType: "image/png",
